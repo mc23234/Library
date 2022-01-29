@@ -97,7 +97,7 @@ function createBook(title,author,pages,genre,read){
 			break;
 	
 	}
-	readStatus.addEventListener('click' ,() => {
+	readStatus.addEventListener('change' ,() => {
 			book.changeStatus(readStatus.value);
 	});
 	
