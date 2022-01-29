@@ -1,0 +1,215 @@
+*{
+	box-sizing:border-box;
+	font-family: 'Roboto', sans-serif;
+	--pine:#3f6c51;
+	--olivine: #a6d49f;
+	--gwhite: #dee8d5;
+	--dsgray:#c3a995;
+	--feldgrau:#6c5a49;
+	--rufuos:#a50104;
+	--green:#264027;
+}
+
+body{
+	background-color:var(--pine);
+	height:100vh;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+	margin:0;
+}
+
+
+.heading{
+	font-size:5rem;
+	color:var(--gwhite);
+	filter:drop-shadow(8px 8px 5px black);
+	text-align:center;
+}
+.book-shelf{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	padding:0 2rem;
+}
+.shelf{
+	text-align:center;
+	color:var(--gwhite);
+	font-size:3rem;
+	filter:drop-shadow(8px 8px 5px black);
+}
+
+.book-container{
+	display:flex;
+	flex-wrap:wrap;
+}
+
+.book-card{
+	display:inline-block;
+	height:48%;
+	width:30%;
+	border-radius:1rem;
+	font-size:2rem;
+	word-wrap:break-word;
+	background:rgba(255,255,255,0.15);
+	color:var(--gwhite);
+	filter: drop-shadow(8px 8px 5px black);
+	padding:1rem;
+	margin:0.8rem;
+}
+
+.card-status{
+	display:block;
+	margin-top:0.5rem;
+}
+
+@media(max-width:768px){
+	.book-card{
+		width:45%;
+		word-wrap:break-word;
+		font-size:1rem;
+		transform:scale(0.85,0.85);
+	}
+}
+
+@media(max-width:400px){
+	.book-card{
+		width:90%;
+	}
+}
+
+.form{
+	position:fixed;
+	top:12.5vh;
+	left:25%;
+	background:var(--green);
+	filter: drop-shadow(8px 8px 10px black);
+	height:75vh;
+	width:50%;
+	font-size:2rem;
+	color:white;
+	border-radius:1.5rem;
+	display:none;
+	flex-direction:column;
+	justify-content:space-between;
+	padding:2rem;
+}
+
+.form label{
+	display:flex;
+}
+
+.form .text,#status{
+	width:70%;
+	margin-left:auto;
+	border-radius:15px;
+	font-size:1.5rem;
+	padding: 0 1rem;
+	border:none;	
+}
+
+@media(max-width:768px){
+	.heading{
+		font-size:3rem;
+	}
+	.shelf{
+		font-size:2rem;
+	}
+	.form{
+		z-index:1;
+		top:5vh;
+		font-size:1rem;
+		height:90vh;
+	}
+	.form label{
+		margin-top:0.5rem;
+	}
+	.form .text,#status{
+		font-size:1rem;
+	}
+}
+
+@media(max-width:400px){
+	.form{
+		width:90%;
+		height:75vh;
+		top:12.5vh;
+		left:5%;
+		font-size:1.5rem;
+	}
+	.form label{
+		margin:0;
+	}
+	.form #status{
+		font-size:0.8rem;
+	}
+}
+
+#status{
+	width:85%;
+	height:2.5rem;
+	font-size:1.2rem;
+	background:transparent;
+	border:1px solid white;
+	color:white;
+}
+
+#status option{
+	font-size:1.25rem;
+	text-align:center;
+	background:var(--pine);
+}
+
+.btns{
+	margin-top:3rem;
+	display:flex;
+	justify-content:space-evenly;
+	align-items:center;
+}
+
+.button{
+	height:3rem;
+	padding:0 2rem;
+	border:none;
+	border-radius:15px;
+	font-size:1.5rem;
+}
+
+@media(max-width:768px){
+	.button{
+		font-size:1rem;
+	}
+}
+
+@media(max-width:768px){
+	.card-status{
+		height:1.8rem;
+	}
+}
+
+.remove-button{
+	margin-top:0.5rem;
+	color:var(--gwhite);
+	background:var(--rufuos);
+}
+
+@media(max-width:768px){
+	.remove-button{
+		height:1.8rem;
+	}
+}
+
+footer{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	font-size:2rem;
+	color:var(--gwhite);
+	filter:drop-shadow(8px 8px 5px black);	
+}
+
+@media(max-width:768px){
+	footer{
+		font-size:1rem;
+	}
+}
