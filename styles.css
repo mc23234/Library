@@ -116,8 +116,9 @@ body{
 		font-size:2rem;
 	}
 	.form{
+		position:absolute;
 		z-index:1;
-		top:5vh;
+		top:0;
 		font-size:1rem;
 		height:90vh;
 	}
@@ -131,9 +132,10 @@ body{
 
 @media(max-width:400px){
 	.form{
+		position:absolute;
 		width:90%;
 		height:75vh;
-		top:12.5vh;
+		top:0;
 		left:5%;
 		font-size:1.5rem;
 	}
