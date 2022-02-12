@@ -17,31 +17,35 @@ const addBook = document.querySelector('.add-book');
 let myLibrary = {};
 
 
-function Book(title,author,pages,genre,read){
-	this.title = title
-	this.author = author
-	this.pages = pages
-	this.genre = genre
-	this.read = read;
-}	
+class Book{
+	
+	constructor(title,author,pages,genre,read){
+		this.title = title
+		this.author = author
+		this.pages = pages
+		this.genre = genre
+		this.read = read;
+	}	
 
-Book.prototype.remove = function(div){
+
+	remove(div){
 		delete myLibrary[this.title];
 		bookContainer.removeChild(div);
 		storeToLocal();
-}
+	}
 	
-Book.prototype.changeStatus = function(value){
+	changeStatus(value){
 		myLibrary[this.title]['read'] = value; 
 		storeToLocal();
-}	
+	}	
 
-Book.prototype.info = function(){
+	info(){
 	return `Title  : ${this.title} <br>
 			Author : ${this.author} <br>
 			Pages  : ${this.pages} <br>
 			Genre  : ${this.genre} <br>`;
-};
+	}
+}
 
 function createBook(title,author,pages,genre,read){
 	
@@ -118,7 +122,6 @@ function getFromLocal(){
 		let pages = tempLib[key].pages;
 		let genre = tempLib[key].genre;
 		let read = tempLib[key].read;
-		console.log(title);
 		createBook(title,author,pages,genre,read);
 	}
 }
